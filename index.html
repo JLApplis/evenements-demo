@@ -1,7 +1,7 @@
 <!doctype html>
 <!--
   EVENEMENTS DEMO — version de démonstration (base simulée dans le navigateur, aucune donnée réelle).
-  Version DEMO du 18/10/2026 à 11h57.
+  Version DEMO du 01/11/2026 à 10h10.
 
   Évènements & inscriptions — inscription des adhérents d'une association à des évènements
   Copyright (C) 2026 JLApplis — contact@jlapplis.fr
@@ -148,7 +148,7 @@
 <div class="hero-wrap">
   <div class="hero-inner">
     <div class="eyebrow" id="version-appli"></div>
-    <h1 class="title">EVENEMENTS DEMO</h1>
+    <h1 class="title">EVENEMENTS &amp; INSCRIPTIONS DEMO</h1>
     <p class="subtitle">Consultez les évènements proposés aux adhérents et inscrivez-vous (et, quand l'évènement le permet, vos accompagnants). Les places restantes sont mises à jour dès qu'une inscription est enregistrée.</p>
     <div class="status-line"><span class="status-dot" id="status-dot"></span><span id="status-text">Démarrage de la démonstration…</span></div>
     <div class="admin-row" id="admin-row"></div>
@@ -414,14 +414,14 @@
 
   // ====== À REMPLIR : configuration de TON nouveau projet Firebase (voir LISEZ-MOI.md) ======
   const NOM_ASSOCIATION = "Association Démo";
-  const VERSION_APPLI = "2026-10-18 11h57";
+  const VERSION_APPLI = "2026-11-01 10h10";
   const firebaseConfig = { demo: true };
   // =========================================================================================
 
   const vm = VERSION_APPLI.match(/^(\d{4})-(\d{2})-(\d{2}) (\d{2}h\d{2})$/);
   const VERSION_AFFICHEE = vm ? "Version DEMO du " + vm[3] + "/" + vm[2] + "/" + vm[1] + " à " + vm[4] : "Version DEMO";
   document.getElementById("version-appli").textContent = VERSION_AFFICHEE;
-  document.title = "EVENEMENTS DEMO — " + VERSION_AFFICHEE;
+  document.title = "EVENEMENTS & INSCRIPTIONS DEMO — " + VERSION_AFFICHEE;
   document.getElementById("footer").textContent = NOM_ASSOCIATION + " — gestion des évènements.";
 
   if(String(firebaseConfig.apiKey).indexOf("REMPLACER") === 0){
