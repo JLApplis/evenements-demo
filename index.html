@@ -1,7 +1,7 @@
 <!doctype html>
 <!--
-  EVENEMENTS DEMO — version de démonstration (base simulée dans le navigateur, aucune donnée réelle).
-  Version DEMO du 01/11/2026 à 10h10.
+  EVENEMENTS & INSCRIPTIONS DEMO 1.0 — version de démonstration (base simulée dans le navigateur, aucune donnée réelle).
+  Version DEMO 1.0.
 
   Évènements & inscriptions — inscription des adhérents d'une association à des évènements
   Copyright (C) 2026 JLApplis — contact@jlapplis.fr
@@ -23,7 +23,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Évènements de l'association</title>
+<title>EVENEMENTS &amp; INSCRIPTIONS DEMO 1.0</title>
 <style>
   :root{
     --bg:#f8f7f4;--surface:#fff;--surface-2:#f1efe8;--ink:#2c2c2a;--ink-soft:#5f5e5a;--ink-faint:#8f8d85;--line:#d3d1c7;
@@ -44,7 +44,6 @@
   .shell{max-width:1200px;margin:0 auto;padding:0 16px 72px}
   .hero-wrap{background:var(--accent-deep);color:#fff}
   .hero-inner{max-width:1200px;margin:0 auto;padding:22px 16px 26px}
-  #version-appli{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:999px;text-transform:none;letter-spacing:.02em}
   .eyebrow{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:700}
   .title{font-size:clamp(1.5rem,3.4vw,2rem);margin-top:6px;color:#fff}
   .subtitle{color:rgba(255,255,255,.85);max-width:60ch;margin-top:8px;font-size:.92rem}
@@ -147,8 +146,7 @@
 
 <div class="hero-wrap">
   <div class="hero-inner">
-    <div class="eyebrow" id="version-appli"></div>
-    <h1 class="title">EVENEMENTS &amp; INSCRIPTIONS DEMO</h1>
+    <h1 class="title" id="titre-appli">EVENEMENTS &amp; INSCRIPTIONS DEMO 1.0</h1>
     <p class="subtitle">Consultez les évènements proposés aux adhérents et inscrivez-vous (et, quand l'évènement le permet, vos accompagnants). Les places restantes sont mises à jour dès qu'une inscription est enregistrée.</p>
     <div class="status-line"><span class="status-dot" id="status-dot"></span><span id="status-text">Démarrage de la démonstration…</span></div>
     <div class="admin-row" id="admin-row"></div>
@@ -414,14 +412,14 @@
 
   // ====== À REMPLIR : configuration de TON nouveau projet Firebase (voir LISEZ-MOI.md) ======
   const NOM_ASSOCIATION = "Association Démo";
-  const VERSION_APPLI = "2026-11-01 10h10";
+  const NOM_APPLI = "EVENEMENTS & INSCRIPTIONS DEMO";
+  const VERSION_APPLI = "1.0";
   const firebaseConfig = { demo: true };
   // =========================================================================================
 
-  const vm = VERSION_APPLI.match(/^(\d{4})-(\d{2})-(\d{2}) (\d{2}h\d{2})$/);
-  const VERSION_AFFICHEE = vm ? "Version DEMO du " + vm[3] + "/" + vm[2] + "/" + vm[1] + " à " + vm[4] : "Version DEMO";
-  document.getElementById("version-appli").textContent = VERSION_AFFICHEE;
-  document.title = "EVENEMENTS & INSCRIPTIONS DEMO — " + VERSION_AFFICHEE;
+  const NOM_AFFICHE = NOM_APPLI + " " + VERSION_APPLI;
+  document.getElementById("titre-appli").textContent = NOM_AFFICHE;
+  document.title = NOM_AFFICHE;
   document.getElementById("footer").textContent = NOM_ASSOCIATION + " — gestion des évènements.";
 
   if(String(firebaseConfig.apiKey).indexOf("REMPLACER") === 0){
